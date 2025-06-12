@@ -1,0 +1,12 @@
+module mux21(output c, input a,b,s);
+    assign c = (s==0)?a:b;
+endmodule
+
+
+module mux41cond( output c, input [1:0]s, input [3:0]a);
+    assign c = (s==2'b00)?a[0]:(s==2'b01)?a[1]:(s==2'b10)?a[2]:a[3];
+endmodule
+
+module mux81cond( output c, input [2:0]s, input [7:0]a);
+    assign c = (s==3'b000)?a[0]:(s==3'b001)?a[1]:(s==3'b010)?a[2]:(s==3'b011)?a[3]:(s==3'b100)?a[4]:(s==3'b101)?a[5]:(s==3'b110)?a[6]:a[7];
+endmodule
